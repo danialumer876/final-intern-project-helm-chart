@@ -1,6 +1,6 @@
 configmap:
   create: true
-  backendUrl: backend-service
+  backendUrl: internproject-backend
 
 image:
   frontendRepository: danialumer876/frontend
