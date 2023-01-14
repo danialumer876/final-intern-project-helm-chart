@@ -15,3 +15,7 @@ service:
   backendType: ClusterIP
   frontendPort: 5200
   backendPort: 5100
+
+env:
+  name: NAME
+  value: "Danial"
