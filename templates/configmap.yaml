@@ -6,24 +6,3 @@ metadata:
 data:
   backend-url: "{{ .Values.configmap.backendUrl }}"
 {{- end }}
-
-
-
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: intern-project-config
-data:
-  backend-url: backend-service
-
-
-# Source: internproject/templates/configmap.yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: demo-internproject-configmap
-data:
-  backendUrl: "backend-service"
----
-
