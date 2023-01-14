@@ -1,0 +1,17 @@
+configmap:
+  create: true
+  backendUrl: backend-service
+
+image:
+  frontendRepository: danialumer876/frontend
+  backendRepository: danialumer876/backend
+  frontendTag: latest
+  backendTag: latest
+
+replicaCount: 1
+
+service:
+  frontendType: NodePort
+  backendType: ClusterIP
+  frontendPort: 5200
+  backendPort: 5100

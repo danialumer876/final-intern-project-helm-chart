@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}-backend
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "fullname" . }}-backend
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}-backend
+    spec:
+      containers:
+      - name: backend
+        image: {{ .Values.image.backendRepository }}:{{ .Values.image.backendTag }}
+        ports:
+        - containerPort: {{ .Values.service.backendPort }}
+        env:
+        - name: NAME
+          value: "Danial"
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: danialumer876/backend:latest
+        ports:
+        - containerPort: 5100
+        env:
+        - name: NAME
+          value: "Danial"
+
