@@ -4,5 +4,5 @@ kind: ConfigMap
 metadata:
   name: {{ template "fullname" . }}-configmap
 data:
-  backend-url: "{{ .Values.configmap.backendUrl }}"
+  backendUrl: "{{ .Values.configmap.backendUrl }}"
 {{- end }}
