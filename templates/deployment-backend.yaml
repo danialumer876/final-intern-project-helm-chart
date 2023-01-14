@@ -18,5 +18,5 @@ spec:
         ports:
         - containerPort: {{ .Values.service.backendPort }}
         env:
-        - name: NAME
-          value: "Danial"
+        - name: {{ .Values.env.name }}
+          value: {{ .Values.env.value }}
